@@ -1,0 +1,8 @@
+== 0.1.1 - 27-Sep-2009
+* Changed license to Artistic 2.0.
+* The mail host now defaults to localhost if the mailhost cannot be resolved.
+* Added the 'gem' Rake task.
+* Some gemspec updates.
+
+== 0.1.0 - 23-Jan-2009
+* Initial release

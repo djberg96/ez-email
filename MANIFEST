@@ -1,0 +1,6 @@
+* CHANGES
+* MANIFEST
+* Rakefile
+* ez-email.gemspec
+* lib/ez/email.rb
+* test/test_ez_email.rb

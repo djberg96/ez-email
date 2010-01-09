@@ -1,0 +1,37 @@
+= Description
+   A very easy interface for sending simple text based emails.
+
+= Synopsis
+   require 'ez/email'
+   
+   EZ::Email.deliver(
+      :to      => 'your_friend@hotstuff.com',
+      :from    => 'you@blah.com',
+      :subject => 'Hello',
+      :body    => 'How are you?'
+   )
+
+= Installation
+   gem install ez-email (rubygems)
+   rake install (manual installation)
+   
+= Rationale
+   The present batch of email handling libraries are either not designed
+   for sending email, or are extremely cumbersome, have lousy interfaces,
+   or are no longer maintained.
+   
+   I just want to sent a flippin' email! This library scratched that itch.
+   Hopefully you will find its simplicity useful, too.
+
+= Bugs
+   None that I'm aware of. Please log any bug reports on the project page at
+   http://www.rubyforge.org/projects/shards.
+
+= License
+   Ruby's
+
+= Copyright
+  (C) 2009, Daniel J. Berger, All Rights Reserved
+   
+= Author
+   Daniel Berger
