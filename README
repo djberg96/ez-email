@@ -1,6 +1,9 @@
 = Description
    A very easy interface for sending simple text based emails.
 
+= Installation
+   gem install ez-email (rubygems)
+
 = Synopsis
    require 'ez/email'
    
@@ -10,10 +13,6 @@
       :subject => 'Hello',
       :body    => 'How are you?'
    )
-
-= Installation
-   gem install ez-email (rubygems)
-   rake install (manual installation)
    
 = Rationale
    The present batch of email handling libraries are either not designed
@@ -28,10 +27,10 @@
    http://www.rubyforge.org/projects/shards.
 
 = License
-   Ruby's
+   Artistic 2.0
 
 = Copyright
-  (C) 2009, Daniel J. Berger, All Rights Reserved
+  (C) 2009-2010, Daniel J. Berger, All Rights Reserved
    
 = Author
    Daniel Berger
