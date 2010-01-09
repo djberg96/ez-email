@@ -2,7 +2,7 @@
    A very easy interface for sending simple text based emails.
 
 = Installation
-   gem install ez-email (rubygems)
+   gem install ez-email
 
 = Synopsis
    require 'ez/email'
