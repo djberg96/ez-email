@@ -1,3 +1,7 @@
+== 0.1.2 - 31-Aug-2011
+* Refactored the Rakefile. Removed the old install task, added a clean
+  task, added a default task, and reorganized the gem tasks.
+
 == 0.1.1 - 27-Sep-2009
 * Changed license to Artistic 2.0.
 * The mail host now defaults to localhost if the mailhost cannot be resolved.

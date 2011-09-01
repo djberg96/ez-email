@@ -18,7 +18,7 @@ class TC_EZ_Email < Test::Unit::TestCase
    end
    
    def test_version
-      assert_equal('0.1.1', EZ::Email::VERSION)      
+      assert_equal('0.1.2', EZ::Email::VERSION)      
    end
 
    def test_to
