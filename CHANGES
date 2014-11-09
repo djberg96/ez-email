@@ -1,3 +1,6 @@
+== 0.1.4 - 8-Nov-2014
+* Minor updates to gemspec and Rakefile.
+
 == 0.1.3 - 9-Jan-2013
 * Fixed a bug where the default 'from' value was not actually being set
   if it wasn't explicitly specified.
