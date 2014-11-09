@@ -8,10 +8,10 @@
    require 'ez/email'
    
    EZ::Email.deliver(
-      :to      => 'your_friend@hotstuff.com',
-      :from    => 'you@blah.com',
-      :subject => 'Hello',
-      :body    => 'How are you?'
+     :to      => 'your_friend@hotstuff.com',
+     :from    => 'you@blah.com',
+     :subject => 'Hello',
+     :body    => 'How are you?'
    )
    
 = Rationale
@@ -19,7 +19,7 @@
    for sending email, or are extremely cumbersome, have lousy interfaces,
    or are no longer maintained.
    
-   I just want to sent a flippin' email! This library scratched that itch.
+   I just want to send a flippin' email! This library scratched that itch.
    Hopefully you will find its simplicity useful, too.
 
 = Bugs
@@ -30,7 +30,7 @@
    Artistic 2.0
 
 = Copyright
-  (C) 2009-2013, Daniel J. Berger, All Rights Reserved
+  (C) 2009-2014, Daniel J. Berger, All Rights Reserved
    
 = Author
    Daniel Berger
