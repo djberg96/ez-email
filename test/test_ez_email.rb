@@ -25,7 +25,7 @@ class TC_EZ_Email < Test::Unit::TestCase
   end
 
   test "version is set to expected value" do
-    assert_equal('0.1.3', EZ::Email::VERSION)
+    assert_equal('0.1.4', EZ::Email::VERSION)
   end
 
   test "to getter method basic functionality" do
