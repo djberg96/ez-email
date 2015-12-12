@@ -10,7 +10,7 @@ module EZ
   # used to send simple emails.
   class Email
     # The version of the ez-email library
-    VERSION = '0.1.4'
+    VERSION = '0.1.5'
 
     begin
       @@mail_host = Resolv.getaddress('mailhost')
