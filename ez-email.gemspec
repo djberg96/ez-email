@@ -1,6 +1,6 @@
 require 'rubygems'
 
-Gem::Specification.new do |s|
+Gem::Specification.new do |spec|
   spec.name        = 'ez-email'
   spec.version     = '0.2.0'
   spec.license     = 'Apache-2.0'
