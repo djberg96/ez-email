@@ -52,6 +52,7 @@ module EZ
     def initialize(options={})
       raise TypeError unless options.is_a?(Hash)
       options[:from] ||= Etc.getlogin + '@' + Socket.gethostname
+      options[:to] = [options[:to]] unless options.is_a?(Array)
       validate_options(options)
       @options = options
     end
@@ -67,7 +68,7 @@ module EZ
       Net::SMTP.start(host, port, host){ |smtp|
         smtp.open_message_stream(self.from, self.to){ |stream|
           stream.puts "From: #{self.from}"
-          stream.puts "To: " + self.to.to_a.join(', ')
+          stream.puts "To: " + self.to.join(', ')
           stream.puts "Subject: #{self.subject}"
           stream.puts
           stream.puts self.body
