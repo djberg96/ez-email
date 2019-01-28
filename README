@@ -5,7 +5,7 @@
    gem install ez-email
 
 = Synopsis
-   require 'ez/email'
+   require 'ez-email'
    
    EZ::Email.deliver(
      :to      => 'your_friend@hotstuff.com',
@@ -15,11 +15,11 @@
    )
    
 = Rationale
-   The present batch of email handling libraries are either not designed
-   for sending email, or are extremely cumbersome, have lousy interfaces,
-   or are no longer maintained.
+   When I originally created this library the existing list of email handling
+   libraries were either not designed for sending email, were extremely cumbersome,
+   had lousy interfaces, or were no longer maintained.
    
-   I just want to send a flippin' email! This library scratched that itch.
+   I just wanted to send a flippin' email! This library scratched that itch.
    Hopefully you will find its simplicity useful, too.
 
 = Bugs
