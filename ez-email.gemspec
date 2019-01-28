@@ -2,8 +2,8 @@ require 'rubygems'
 
 Gem::Specification.new do |s|
   s.name        = 'ez-email'
-  s.version     = '0.1.5'
-  s.license     = 'Artistic 2.0'
+  s.version     = '0.2.0'
+  s.license     = 'Apache-2.0'
   s.summary     = 'Really easy emails'
   s.description = 'A very simple interface for sending email'
   s.author      = 'Daniel Berger'
