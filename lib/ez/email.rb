@@ -10,37 +10,25 @@ module EZ
   # used to send simple emails.
   class Email
     # The version of the ez-email library
-    VERSION = '0.1.5'
+    VERSION = '0.2.0'.freeze
 
-    begin
-      @@mail_host = Resolv.getaddress('mailhost')
-    rescue Resolv::ResolvError
-      @@mail_host = 'localhost'
-    end
+    class << self
+      attr_writer :mail_host
+      attr_writer :mail_port
 
-    @@mail_port = 25
+      # The name of the mail host to use when sending email. The default
+      # is whatever the address of your system's 'mailhost' resolves to.
+      # If that cannot be determined, your localhost is used.
 
-    # The name of the mail host to use when sending email. The default
-    # is whatever the address of your system's 'mailhost' resolves to.
-    # If that cannot be determined, your localhost is used.
-    #
-    def self.mail_host
-      @@mail_host
-    end
+      def mail_host
+        @mail_host ||= Resolv.getaddress('mailhost')
+      rescue Resolv::ResolvError
+        @mail_host ||= 'localhost'
+      end
 
-    # Sets the mail host.
-    def self.mail_host=(host)
-      @@mail_host = host
-    end
-
-    # The port to use when sending email. The default is 25.
-    def self.mail_port
-      @@mail_port
-    end
-
-    # Sets the mail port.
-    def self.mail_port=(port)
-      @@mail_port = 25
+      def mail_port
+        @mail_port ||= 25
+      end
     end
 
     # A single email address or an array of email addresses to whom
