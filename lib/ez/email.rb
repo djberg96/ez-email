@@ -19,13 +19,15 @@ module EZ
       # The name of the mail host to use when sending email. The default
       # is whatever the address of your system's 'mailhost' resolves to.
       # If that cannot be determined, your localhost is used.
-
+      #
       def mail_host
         @mail_host ||= Resolv.getaddress('mailhost')
       rescue Resolv::ResolvError
         @mail_host ||= 'localhost'
       end
 
+      # The port to use when sending email. The default is 25.
+      #
       def mail_port
         @mail_port ||= 25
       end
