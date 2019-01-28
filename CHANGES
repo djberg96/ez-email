@@ -1,3 +1,12 @@
+== 0.2.0 - 28-Jan-2019
+* Changed license to Apache-2.0.
+* Fixed a bug where it was blowing up on a single "to" argument.
+* The VERSION constant is now frozen.
+* Added the ez-mail.rb file for convenience.
+* Modified code internally to use singletons instead of class variables.
+* Updated cert, should be good for about 10 years.
+* Added metadata to the gemspec.
+
 == 0.1.5 - 12-Dec-2015
 * This gem is now signed.
 * Updates to Rakefile and gemspec for gem signing.
