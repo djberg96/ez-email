@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |spec|
   spec.name        = 'ez-email'
-  spec.version     = '0.2.0'
+  spec.version     = '0.2.1'
   spec.license     = 'Apache-2.0'
   spec.summary     = 'Really easy emails'
   spec.description = 'A very simple interface for sending email'

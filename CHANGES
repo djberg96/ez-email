@@ -1,3 +1,6 @@
+== 0.2.1 - 1-Jun-2020
+* Added a LICENSE file to the distro as required by the Apache-2.0 license.
+
 == 0.2.0 - 28-Jan-2019
 * Changed license to Apache-2.0.
 * Fixed a bug where it was blowing up on a single "to" argument.
