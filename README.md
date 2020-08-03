@@ -37,7 +37,7 @@ Apache-2.0
 
 ### Copyright
 
-(C) 2009-2019, Daniel J. Berger, All Rights Reserved
+(C) 2009-2020, Daniel J. Berger, All Rights Reserved
    
 ### Author
 
