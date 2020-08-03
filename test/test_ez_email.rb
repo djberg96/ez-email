@@ -25,7 +25,7 @@ class TC_EZ_Email < Test::Unit::TestCase
   end
 
   test "version is set to expected value" do
-    assert_equal('0.2.1', EZ::Email::VERSION)
+    assert_equal('0.2.2', EZ::Email::VERSION)
     assert_true(EZ::Email::VERSION.frozen?)
   end
 
