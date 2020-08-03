@@ -1,0 +1,10 @@
+- CHANGES.md
+- LICENSE
+- MANIFEST.md
+- README.md
+- Rakefile
+- ez-email.gemspec
+- certs/djberg96_pub.pem
+- lib/ez-email.rb
+- lib/ez/email.rb
+- test/test_ez_email.rb
