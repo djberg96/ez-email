@@ -1,3 +1,6 @@
+## 0.2.2 - 3-Aug-2020
+- Switch README, CHANGES and MANIFEST files to markdown format.
+
 ## 0.2.1 - 1-Jun-2020
 - Added a LICENSE file to the distro as required by the Apache-2.0 license.
 
