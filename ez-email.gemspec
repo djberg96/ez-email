@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |spec|
   spec.name        = 'ez-email'
-  spec.version     = '0.2.1'
+  spec.version     = '0.2.2'
   spec.license     = 'Apache-2.0'
   spec.summary     = 'Really easy emails'
   spec.description = 'A very simple interface for sending email'
@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.files       = Dir['**/*'].reject{ |f| f.include?('git') }
   spec.cert_chain  = Dir['certs/*']
   
-  spec.extra_rdoc_files  = ['README', 'CHANGES', 'MANIFEST']
+  spec.extra_rdoc_files  = ['README.md', 'CHANGES.md', 'MANIFEST.md']
 
   spec.add_development_dependency('test-unit')
 
