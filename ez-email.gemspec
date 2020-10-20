@@ -2,20 +2,20 @@ require 'rubygems'
 
 Gem::Specification.new do |spec|
   spec.name        = 'ez-email'
-  spec.version     = '0.2.2'
+  spec.version     = '0.3.0'
   spec.license     = 'Apache-2.0'
   spec.summary     = 'Really easy emails'
   spec.description = 'A very simple interface for sending email'
   spec.author      = 'Daniel Berger'
   spec.email       = 'djberg96@gmail.com'
   spec.homepage    = 'https://github.com/djberg96/ez-email'
-  spec.test_file   = 'test/test_ez_email.rb'
+  spec.test_file   = 'spec/ez_email_spec.rb'
   spec.files       = Dir['**/*'].reject{ |f| f.include?('git') }
   spec.cert_chain  = Dir['certs/*']
   
   spec.extra_rdoc_files  = ['README.md', 'CHANGES.md', 'MANIFEST.md']
 
-  spec.add_development_dependency('test-unit')
+  spec.add_development_dependency('rspec', '~> 3.9')
 
   spec.metadata = {
     'homepage_uri'      => 'https://github.com/djberg96/ez-email',
