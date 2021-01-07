@@ -1,19 +1,19 @@
 ### Description
-   A very easy interface for sending simple text based emails.
+A very easy interface for sending simple text based emails.
 
 ### Installation
-   gem install ez-email
+`gem install ez-email`
 
 ### Synopsis
-```
-   require 'ez-email'
+```ruby
+require 'ez-email'
    
-   EZ::Email.deliver(
-     :to      => 'your_friend@hotstuff.com',
-     :from    => 'you@blah.com',
-     :subject => 'Hello',
-     :body    => 'How are you?'
-   )
+EZ::Email.deliver(
+  :to      => 'your_friend@hotstuff.com',
+  :from    => 'you@blah.com',
+  :subject => 'Hello',
+  :body    => 'How are you?'
+)
 ```
    
 ### Rationale
@@ -37,7 +37,7 @@ Apache-2.0
 
 ### Copyright
 
-(C) 2009-2020, Daniel J. Berger, All Rights Reserved
+(C) 2009-2021, Daniel J. Berger, All Rights Reserved
    
 ### Author
 
