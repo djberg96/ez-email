@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     'homepage_uri'      => 'https://github.com/djberg96/ez-email',
     'bug_tracker_uri'   => 'https://github.com/djberg96/ez-email/issues',
-    'changelog_uri'     => 'https://github.com/djberg96/ez-email/blob/master/CHANGES',
+    'changelog_uri'     => 'https://github.com/djberg96/ez-email/blob/main/CHANGES',
     'documentation_uri' => 'https://github.com/djberg96/ez-email/wiki',
     'source_code_uri'   => 'https://github.com/djberg96/ez-email',
     'wiki_uri'          => 'https://github.com/djberg96/ez-email/wiki'
