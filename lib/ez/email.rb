@@ -7,7 +7,6 @@ require 'net/smtp'
 
 # The EZ module serves as a namespace only.
 module EZ
-
   # The Email class encapsulates certain SMTP attributes, which are then
   # used to send simple emails.
   class Email
@@ -15,7 +14,10 @@ module EZ
     VERSION = '0.3.0'
 
     class << self
+      # Writer method for the mail_host property.
       attr_writer :mail_host
+
+      # Writer method for the mail_port property.
       attr_writer :mail_port
 
       # The name of the mail host to use when sending email. The default
@@ -53,7 +55,7 @@ module EZ
     # Creates a new EZ::Email object. As a general rule you won't use
     # this method, but should use EZ::Email.deliver instead.
     #
-    def initialize(options={})
+    def initialize(options = {})
       raise TypeError unless options.is_a?(Hash)
       options[:from] ||= Etc.getlogin + '@' + Socket.gethostname
       validate_options(options)
