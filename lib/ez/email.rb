@@ -128,9 +128,9 @@ module EZ
         send("#{key}=", value)
       end
 
-      if to.nil? || subject.nil? || body.nil?
-        raise ArgumentError, 'Missing :to, :subject or :body'
-      end
+      raise ArgumentError, 'Missing :to' if to.nil?
+      raise ArgumentError, 'Missing :subject' if subject.nil?
+      raise ArgumentError, 'Missing :body' if body.nil?
     end
   end
 end
