@@ -68,15 +68,15 @@ module EZ
 
       to_list = to.is_a?(Array) ? to : [to]
 
-      Net::SMTP.start(host, port, host){ |smtp|
-        smtp.open_message_stream(from, to){ |stream|
+      Net::SMTP.start(host, port, host) do |smtp|
+        smtp.open_message_stream(from, to) do |stream|
           stream.puts "From: #{from}"
           stream.puts 'To: ' + to_list.join(', ')
           stream.puts "Subject: #{subject}"
           stream.puts
           stream.puts body
-        }
-      }
+        end
+      end
     end
 
     # Delivers a simple text email message using four options:
@@ -118,11 +118,11 @@ module EZ
     def validate_options(hash)
       valid = %w[to from subject body]
 
-      hash.each{ |key, value|
+      hash.each do |key, value|
         key = key.to_s.downcase
         raise ArgumentError unless valid.include?(key)
         send("#{key}=", value)
-      }
+      end
 
       if to.nil? || subject.nil? || body.nil?
         raise ArgumentError, 'Missing :to, :subject or :body'
