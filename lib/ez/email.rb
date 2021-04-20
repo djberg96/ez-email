@@ -66,15 +66,15 @@ module EZ
       host = EZ::Email.mail_host
       port = EZ::Email.mail_port
 
-      to_list = self.to.is_a?(Array) ? self.to : [self.to]
+      to_list = to.is_a?(Array) ? to : [to]
 
       Net::SMTP.start(host, port, host){ |smtp|
-        smtp.open_message_stream(self.from, self.to){ |stream|
-          stream.puts "From: #{self.from}"
-          stream.puts "To: " + to_list.join(', ')
-          stream.puts "Subject: #{self.subject}"
+        smtp.open_message_stream(from, to){ |stream|
+          stream.puts "From: #{from}"
+          stream.puts 'To: ' + to_list.join(', ')
+          stream.puts "Subject: #{subject}"
           stream.puts
-          stream.puts self.body
+          stream.puts body
         }
       }
     end
@@ -125,7 +125,7 @@ module EZ
       }
 
       if to.nil? || subject.nil? || body.nil?
-        raise ArgumentError, "Missing :to, :subject or :body"
+        raise ArgumentError, 'Missing :to, :subject or :body'
       end
     end
   end
