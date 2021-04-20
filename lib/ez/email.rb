@@ -12,7 +12,7 @@ module EZ
   # used to send simple emails.
   class Email
     # The version of the ez-email library
-    VERSION = '0.3.0'.freeze
+    VERSION = '0.3.0'
 
     class << self
       attr_writer :mail_host
