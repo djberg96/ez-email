@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'resolv'
 require 'etc'
 require 'socket'
@@ -5,15 +7,17 @@ require 'net/smtp'
 
 # The EZ module serves as a namespace only.
 module EZ
-
   # The Email class encapsulates certain SMTP attributes, which are then
   # used to send simple emails.
   class Email
     # The version of the ez-email library
-    VERSION = '0.3.0'.freeze
+    VERSION = '0.3.0'
 
     class << self
+      # Writer method for the mail_host property.
       attr_writer :mail_host
+
+      # Writer method for the mail_port property.
       attr_writer :mail_port
 
       # The name of the mail host to use when sending email. The default
@@ -51,9 +55,9 @@ module EZ
     # Creates a new EZ::Email object. As a general rule you won't use
     # this method, but should use EZ::Email.deliver instead.
     #
-    def initialize(options={})
+    def initialize(options = {})
       raise TypeError unless options.is_a?(Hash)
-      options[:from] ||= Etc.getlogin + '@' + Socket.gethostname
+      options[:from] ||= "#{Etc.getlogin}@#{Socket.gethostname}"
       validate_options(options)
       @options = options
     end
@@ -66,17 +70,17 @@ module EZ
       host = EZ::Email.mail_host
       port = EZ::Email.mail_port
 
-      to_list = self.to.is_a?(Array) ? self.to : [self.to]
+      to_list = to.is_a?(Array) ? to : [to]
 
-      Net::SMTP.start(host, port, host){ |smtp|
-        smtp.open_message_stream(self.from, self.to){ |stream|
-          stream.puts "From: #{self.from}"
-          stream.puts "To: " + to_list.join(', ')
-          stream.puts "Subject: #{self.subject}"
+      Net::SMTP.start(host, port, host) do |smtp|
+        smtp.open_message_stream(from, to) do |stream|
+          stream.puts "From: #{from}"
+          stream.puts "To: #{to_list.join(', ')}"
+          stream.puts "Subject: #{subject}"
           stream.puts
-          stream.puts self.body
-        }
-      }
+          stream.puts body
+        end
+      end
     end
 
     # Delivers a simple text email message using four options:
@@ -118,15 +122,15 @@ module EZ
     def validate_options(hash)
       valid = %w[to from subject body]
 
-      hash.each{ |key, value|
+      hash.each do |key, value|
         key = key.to_s.downcase
         raise ArgumentError unless valid.include?(key)
         send("#{key}=", value)
-      }
-
-      if to.nil? || subject.nil? || body.nil?
-        raise ArgumentError, "Missing :to, :subject or :body"
       end
+
+      raise ArgumentError, 'Missing :to' if to.nil?
+      raise ArgumentError, 'Missing :subject' if subject.nil?
+      raise ArgumentError, 'Missing :body' if body.nil?
     end
   end
 end
