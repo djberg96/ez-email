@@ -8,9 +8,9 @@ namespace :gem do
   desc 'Build the ez-email gem'
   task :create => [:clean] do
     require 'rubygems/package'
-    spec = eval(IO.read('ez-email.gemspec'))
+    spec = Gem::Specification.load('ez-email.gemspec')
     spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
-    Gem::Package.build(spec, true)
+    Gem::Package.build(spec)
   end
 
   desc "Install the ez-email package as a gem"
