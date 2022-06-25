@@ -21,7 +21,7 @@ RSpec.describe EZ::Email do
     @body = 'How are you?'
 
     @opts = {:to => @to, :from => @from, :subject => @subj, :body => @body }
-    @email = EZ::Email.new(@opts)
+    @email = described_class.new(@opts)
   end
 
   example 'version is set to expected value' do
@@ -65,7 +65,7 @@ RSpec.describe EZ::Email do
   end
 
   example 'from defaults to username@host if not set in constructor' do
-    @email = EZ::Email.new(:to => 'x', :subject => 'x', :body => 'x')
+    @email = described_class.new(:to => 'x', :subject => 'x', :body => 'x')
     expected = login << '@' << host
     expect(@email.from).to eq(expected)
   end
@@ -101,33 +101,33 @@ RSpec.describe EZ::Email do
   end
 
   example 'mail_host getter basic functionality' do
-    expect(EZ::Email).to respond_to(:mail_host)
-    expect{ EZ::Email.mail_host }.not_to raise_error
-    expect(EZ::Email.mail_host).not_to be_nil
+    expect(described_class).to respond_to(:mail_host)
+    expect{ described_class.mail_host }.not_to raise_error
+    expect(described_class.mail_host).not_to be_nil
   end
 
   example 'mail_host setter basic functionality' do
-    expect(EZ::Email).to respond_to(:mail_host=)
-    expect{ EZ::Email.mail_host = 'Test' }.not_to raise_error
+    expect(described_class).to respond_to(:mail_host=)
+    expect{ described_class.mail_host = 'Test' }.not_to raise_error
   end
 
   example 'mail_port singleton getter basic functionality' do
-    expect(EZ::Email).to respond_to(:mail_port)
+    expect(described_class).to respond_to(:mail_port)
   end
 
   example 'mail_port singleton setter basic functionality' do
-    expect(EZ::Email).to respond_to(:mail_port=)
+    expect(described_class).to respond_to(:mail_port=)
   end
 
   example 'mail_port method returns the expected value' do
-    expect(EZ::Email.mail_port).to eq(25)
+    expect(described_class.mail_port).to eq(25)
   end
 
   example 'deliver singleton method basic functionality' do
-    expect(EZ::Email).to respond_to(:deliver)
+    expect(described_class).to respond_to(:deliver)
   end
 
   example 'passing an invalid option to the constructor raises an error' do
-    expect{ EZ::Email.send(:new, {:bogus => 77}) }.to raise_error(ArgumentError)
+    expect{ described_class.send(:new, {:bogus => 77}) }.to raise_error(ArgumentError)
   end
 end
