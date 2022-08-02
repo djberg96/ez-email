@@ -1,7 +1,10 @@
 ########################################################################
 # ez_email_spec.rb
 #
-# Specs for the EZ::Email library.
+# Specs for the EZ::Email library. These specs assume that you are
+# running the mailhog docker container on port 1025.
+#
+# Install docker and run "docker compose run mailhog" first.
 ########################################################################
 require 'rspec'
 require 'ez/email'
@@ -11,6 +14,7 @@ require 'etc'
 RSpec.describe EZ::Email do
   let(:host){ Socket.gethostname }
   let(:login){ Etc.getlogin }
+  let(:port){ 1025 }
 
   before do
     @to   = 'foo@some_mail_service.com'
@@ -106,23 +110,32 @@ RSpec.describe EZ::Email do
 
   example "mail_host setter basic functionality" do
     expect(EZ::Email).to respond_to(:mail_host=)
-    expect{ EZ::Email.mail_host = "Test" }.not_to raise_error
+    expect{ EZ::Email.mail_host = 'Test' }.not_to raise_error
+    expect(EZ::Email.mail_host).to eq('Test')
   end
 
   example "mail_port singleton getter basic functionality" do
     expect(EZ::Email).to respond_to(:mail_port)
   end
 
-  example "mail_port singleton setter basic functionality" do
-    expect(EZ::Email).to respond_to(:mail_port=)
+  example "mail_port method returns the expected default value" do
+    expect(EZ::Email.mail_port).to eq(25)
   end
 
-  example "mail_port method returns the expected value" do
-    expect(EZ::Email.mail_port).to eq(25)
+  example "mail_port singleton setter basic functionality" do
+    expect(EZ::Email).to respond_to(:mail_port=)
+    expect{ EZ::Email.mail_port = port }.not_to raise_error
+    expect(EZ::Email.mail_port).to eq(1025)
   end
 
   example "deliver singleton method basic functionality" do
     expect(EZ::Email).to respond_to(:deliver)
+  end
+
+  example "deliver singleton method works without error" do
+    EZ::Email.mail_host = 'localhost'
+    EZ::Email.mail_port = port
+    expect{ EZ::Email.deliver(@opts) }.not_to raise_error
   end
 
   example "passing an invalid option to the constructor raises an error" do
