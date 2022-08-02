@@ -3,6 +3,7 @@
 - MANIFEST.md
 - README.md
 - Rakefile
+- docker-compose.yml
 - ez-email.gemspec
 - certs/djberg96_pub.pem
 - lib/ez-email.rb
