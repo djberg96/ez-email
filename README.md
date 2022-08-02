@@ -25,6 +25,12 @@ had lousy interfaces, or were no longer maintained.
 I just wanted to send a flippin' email! This library scratched that itch.
 Hopefully you will find its simplicity useful, too.
 
+Update: Since I wrote this there is also now the Pony library which is almost
+as simple and more flexible. At this point I would recommend that library
+for sending simple emails:
+
+https://github.com/benprew/pony
+
 ### Local Testing
 To run the specs you will need a mail server running locally. If you do not
 already have a mail server running on port 1025 then run the following command:
