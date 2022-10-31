@@ -1,3 +1,6 @@
+## 0.3.0 - 20-Oct-2020
+- Switch test suite from test-unit to rspec.
+
 ## 0.2.2 - 3-Aug-2020
 - Switch README, CHANGES and MANIFEST files to markdown format.
 
