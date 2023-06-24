@@ -4,6 +4,9 @@ A very easy interface for sending simple text based emails.
 ### Installation
 `gem install ez-email`
 
+### Adding the trusted cert
+`gem cert --add <(curl -Ls https://raw.githubusercontent.com/djberg96/ez-email/main/certs/djberg96_pub.pem)`
+
 ### Synopsis
 ```ruby
 require 'ez-email'
@@ -58,7 +61,7 @@ Apache-2.0
 
 ### Copyright
 
-(C) 2009-2022, Daniel J. Berger, All Rights Reserved
+(C) 2009-2023, Daniel J. Berger, All Rights Reserved
    
 ### Author
 
