@@ -19,11 +19,14 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('rspec', '~> 3.9')
 
   spec.metadata = {
-    'homepage_uri'      => 'https://github.com/djberg96/ez-email',
-    'bug_tracker_uri'   => 'https://github.com/djberg96/ez-email/issues',
-    'changelog_uri'     => 'https://github.com/djberg96/ez-email/blob/main/CHANGES.md',
-    'documentation_uri' => 'https://github.com/djberg96/ez-email/wiki',
-    'source_code_uri'   => 'https://github.com/djberg96/ez-email',
-    'wiki_uri'          => 'https://github.com/djberg96/ez-email/wiki'
+    'homepage_uri'          => 'https://github.com/djberg96/ez-email',
+    'bug_tracker_uri'       => 'https://github.com/djberg96/ez-email/issues',
+    'changelog_uri'         => 'https://github.com/djberg96/ez-email/blob/main/CHANGES.md',
+    'documentation_uri'     => 'https://github.com/djberg96/ez-email/wiki',
+    'source_code_uri'       => 'https://github.com/djberg96/ez-email',
+    'wiki_uri'              => 'https://github.com/djberg96/ez-email/wiki',
+    'github_repo'           => 'https://github.com/djberg96/attempt',
+    'funding_uri'           => 'https://github.com/sponsors/djberg96',
+    'rubygems_mfa_required' => 'true'
   }
 end
