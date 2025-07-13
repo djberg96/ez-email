@@ -1,3 +1,6 @@
+## 0.4.0 - 13-Jul-2025
+- Add support for email attachments.
+
 ## 0.3.0 - 20-Oct-2020
 - Switch test suite from test-unit to rspec.
 

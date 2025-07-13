@@ -27,7 +27,7 @@ RSpec.describe EZ::Email do
   end
 
   example "version is set to expected value" do
-    expect(EZ::Email::VERSION).to eq('0.3.0')
+    expect(EZ::Email::VERSION).to eq('0.4.0')
     expect(EZ::Email::VERSION).to be_frozen
   end
 
@@ -140,5 +140,58 @@ RSpec.describe EZ::Email do
 
   example "passing an invalid option to the constructor raises an error" do
     expect{ EZ::Email.send(:new, {:bogus => 77}) }.to raise_error(ArgumentError)
+  end
+
+  example "attachments getter basic functionality" do
+    expect(@email).to respond_to(:attachments)
+    expect{ @email.attachments }.not_to raise_error
+  end
+
+  example "attachments setter basic functionality" do
+    expect(@email).to respond_to(:attachments=)
+    expect{ @email.attachments = [] }.not_to raise_error
+  end
+
+  example "attachments method returns an array" do
+    expect(@email.attachments).to be_an(Array)
+  end
+
+  example "attachments defaults to empty array" do
+    expect(@email.attachments).to be_empty
+  end
+
+  example "can set attachments via constructor" do
+    # Create a test file
+    test_file = '/tmp/test_attachment.txt'
+    File.write(test_file, 'test content')
+
+    begin
+      opts_with_attachments = @opts.merge(attachments: [test_file])
+      email = EZ::Email.new(opts_with_attachments)
+      expect(email.attachments).to eq([test_file])
+    ensure
+      File.delete(test_file) if File.exist?(test_file)
+    end
+  end
+
+  example "raises error for non-existent attachment file" do
+    opts_with_bad_attachment = @opts.merge(attachments: ['/non/existent/file.txt'])
+    expect{ EZ::Email.new(opts_with_bad_attachment) }.to raise_error(ArgumentError, /Attachment file not found/)
+  end
+
+  example "can deliver email with attachments" do
+    # Create a test file
+    test_file = '/tmp/test_attachment.txt'
+    File.write(test_file, 'test content for attachment')
+
+    begin
+      EZ::Email.mail_host = 'localhost'
+      EZ::Email.mail_port = port
+
+      opts_with_attachments = @opts.merge(attachments: [test_file])
+      expect{ EZ::Email.deliver(opts_with_attachments) }.not_to raise_error
+    ensure
+      File.delete(test_file) if File.exist?(test_file)
+    end
   end
 end

@@ -12,11 +12,15 @@ Gem::Specification.new do |spec|
   spec.test_file   = 'spec/ez_email_spec.rb'
   spec.files       = Dir['**/*'].reject{ |f| f.include?('git') }
   spec.cert_chain  = Dir['certs/*']
-  
+
   spec.extra_rdoc_files  = ['README.md', 'CHANGES.md', 'MANIFEST.md']
 
   spec.add_development_dependency('rake')
   spec.add_development_dependency('rspec', '~> 3.9')
+
+  spec.add_runtime_dependency('mime-types', '~> 3.0')
+  spec.add_runtime_dependency('net-smtp')
+  spec.add_runtime_dependency('base64')
 
   spec.metadata = {
     'homepage_uri'          => 'https://github.com/djberg96/ez-email',
