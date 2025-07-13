@@ -20,6 +20,18 @@ namespace :gem do
   end
 end
 
+namespace :mailhog do
+  desc 'Start a local mailhog server'
+  task :start do
+    system('docker compose up -d')
+  end
+
+  desc 'Stop the local mail server'
+  task :stop do
+    system('docker compose down')
+  end
+end
+
 desc "Run the test suite"
 RSpec::Core::RakeTask.new(:spec)
 
