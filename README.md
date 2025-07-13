@@ -10,32 +10,53 @@ A very easy interface for sending simple text based emails.
 ### Synopsis
 ```ruby
 require 'ez-email'
-   
+
+# Simple email
 EZ::Email.deliver(
   :to      => 'your_friend@hotstuff.com',
   :from    => 'you@blah.com',
   :subject => 'Hello',
   :body    => 'How are you?'
 )
+
+# Email with attachments
+EZ::Email.deliver(
+  :to          => 'your_friend@hotstuff.com',
+  :from        => 'you@blah.com',
+  :subject     => 'Files attached',
+  :body        => 'Please find the attached files.',
+  :attachments => ['/path/to/file1.pdf', '/path/to/file2.txt']
+)
 ```
-   
+
 ### Rationale
 
 When I originally created this library the existing list of email handling
 libraries were either not designed for sending email, were extremely cumbersome,
 had lousy interfaces, or were no longer maintained.
-   
+
 I just wanted to send a flippin' email! This library scratched that itch.
 Hopefully you will find its simplicity useful, too.
 
-Update: Since I wrote this there is also now the Pony library which is almost
-as simple and more flexible since it can also handle attachments, among other
-things. Consequently, these days I would generally recommend that library over
-this one for sending simple emails:
+### Features
 
-https://github.com/benprew/pony
+* Simple interface for sending text emails
+* Support for multiple recipients
+* File attachments support
+* Automatic MIME type detection for attachments
+* Minimal dependencies
 
-However, I will continue to maintain this library for now.
+### API
+
+The library supports these options:
+
+* `:to` - Email address(es) of recipient(s). Can be a string or array. (Required)
+* `:from` - Email address of sender. Defaults to user@hostname if not specified.
+* `:subject` - Subject line of the email. (Required)
+* `:body` - Body text of the email. (Required)
+* `:attachments` - Array of file paths to attach. (Optional)
+
+All file attachments are automatically base64 encoded and sent with appropriate MIME types.
 
 ### Local Testing
 To run the specs you will need a mail server running locally. If you do not
@@ -62,7 +83,7 @@ Apache-2.0
 ### Copyright
 
 (C) 2009-2023, Daniel J. Berger, All Rights Reserved
-   
+
 ### Author
 
 Daniel Berger
