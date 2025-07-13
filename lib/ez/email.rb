@@ -13,7 +13,7 @@ module EZ
   # used to send simple emails.
   class Email
     # The version of the ez-email library
-    VERSION = '0.3.0'
+    VERSION = '0.4.0'
 
     class << self
       # Writer method for the mail_host property.

@@ -27,7 +27,7 @@ RSpec.describe EZ::Email do
   end
 
   example "version is set to expected value" do
-    expect(EZ::Email::VERSION).to eq('0.3.0')
+    expect(EZ::Email::VERSION).to eq('0.4.0')
     expect(EZ::Email::VERSION).to be_frozen
   end
 
