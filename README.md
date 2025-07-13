@@ -76,6 +76,10 @@ None that I'm aware of. Please log any bug reports on the project page at
 
 https://github.com/djberg96/ez-email.
 
+### See Also
+
+The "pony" gem at https://github.com/benprew/pony.
+
 ### License
 
 Apache-2.0
