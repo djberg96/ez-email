@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('rake')
   spec.add_development_dependency('rspec', '~> 3.9')
 
-  spec.add_runtime_dependency('mime-types', '~> 3.0')
+  spec.add_runtime_dependency('mime-types', '~> 3.7')
   spec.add_runtime_dependency('net-smtp')
   spec.add_runtime_dependency('base64')
 
