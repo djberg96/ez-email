@@ -1,6 +1,7 @@
 services:
   mailhog:
     image: mailhog/mailhog:latest
+    platform: linux/amd64
     restart: always
     logging:
       driver: 'none' # disable saving logs
