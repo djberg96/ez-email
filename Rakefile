@@ -33,6 +33,8 @@ namespace :mailhog do
 end
 
 desc "Run the test suite"
-RSpec::Core::RakeTask.new(:spec)
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.rspec_opts = '-f documentation -w'
+end
 
 task :default => :spec
